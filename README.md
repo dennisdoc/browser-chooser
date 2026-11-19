@@ -1,59 +1,52 @@
-# UrlRouter
+# URL Router
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.3.0.
+URL Router is a Windows desktop app built with Electron, Angular, and Angular
+Material. It routes HTTP and HTTPS links to browsers based on their domains.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Detect installed browsers or add a browser executable manually.
+- Route domains and their subdomains to a chosen browser.
+- Choose a default browser for all other links.
+- Pause the default-browser countdown by holding Shift to choose a browser.
+- Save settings as JSON in Electron's user data folder.
 
-```bash
-ng serve
+## Development
+
+Install Node.js and npm, then install the project dependencies:
+
+```sh
+npm install
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Run the app with live Angular updates:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```sh
+npm run electron:dev
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Run the unit tests:
 
-```bash
-ng generate --help
+```sh
+npm test -- --watch=false
 ```
 
-## Building
+## Build the Windows installer
 
-To build the project run:
-
-```bash
-ng build
+```sh
+npm run dist
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+The NSIS installer is generated in `dist/`. After installing, use **Set as
+default browser** in the app and select URL Router in Windows Default apps.
 
-## Running unit tests
+## Configure routing
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+1. Use **Refresh browser list** to detect installed browsers, or add one manually.
+2. Add domain rules such as `claude.ai`, `instagram.com`, or `gmail.com`.
+   Rules also match subdomains.
+3. Select a default browser and configure the countdown delay.
+4. Save the settings.
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Settings are stored as `settings.json` under Electron's `userData` directory
+(typically `%APPDATA%\url-router\settings.json` on Windows).
