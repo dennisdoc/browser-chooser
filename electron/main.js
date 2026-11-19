@@ -78,10 +78,11 @@ function openPrompt(data) {
     width: 460, height: 360, frame: false, resizable: false, alwaysOnTop: true,
     center: true, skipTaskbar: false, webPreferences: webPrefs,
   });
-  prompts.set(win.webContents.id, data);
+  const promptId = win.webContents.id;
+  prompts.set(promptId, data);
   load(win, 'redirect');
   win.once('ready-to-show', () => { win.show(); win.focus(); }); // focus needed to detect Shift
-  win.on('closed', () => { prompts.delete(win.webContents.id); quitIfIdle(); });
+  win.on('closed', () => { prompts.delete(promptId); quitIfIdle(); });
 }
 
 // ---------- IPC ----------
