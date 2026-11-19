@@ -51,7 +51,7 @@ import { Config, ElectronService } from '../electron.service';
       <mat-card>
         <mat-card-header><mat-card-title>Rules</mat-card-title></mat-card-header>
         <mat-card-content>
-          <p class="path">Domain match includes subdomains. Example: <b>claude.ai</b>, <b>instagram.com</b>. First matching rule wins.</p>
+          <p class="path">Enter a domain or paste a URL. Rules match subdomains too. Example: <b>claude.ai</b>, <b>instagram.com</b>. First matching rule wins.</p>
           @for (r of c.rules; track $index) {
             <div class="row">
               <mat-form-field class="grow"><mat-label>Domain</mat-label><input matInput [(ngModel)]="r.pattern"></mat-form-field>

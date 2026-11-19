@@ -2,6 +2,7 @@ const { app, BrowserWindow, ipcMain, dialog, shell } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const { spawn } = require('child_process');
+const matches = require('./url-matcher');
 
 const DEV = !!process.env.NG_DEV;
 const DEFAULTS = { browsers: [], rules: [], defaultBrowserId: null, delaySeconds: 2 };
@@ -17,12 +18,6 @@ function saveConfig(cfg) {
 }
 
 // ---------- URL routing ----------
-function matches(host, pattern) {
-  const p = pattern.trim().toLowerCase().replace(/^\*\./, '').replace(/^www\./, '');
-  const h = host.toLowerCase().replace(/^www\./, '');
-  return h === p || h.endsWith('.' + p);
-}
-
 function launch(browser, url) {
   // NEVER use shell.openExternal(url) here: we are the default browser -> infinite loop.
   const p = browser.path;

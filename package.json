@@ -8,6 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test:routing": "node --test electron/url-matcher.test.js",
     "serve:ssr:url-router": "node dist/url-router/server/server.mjs",
     "electron:dev": "concurrently \"ng serve\" \"wait-on http://localhost:4200 && cross-env NG_DEV=1 electron .\"",
     "electron": "ng build --base-href ./ && electron .",
