@@ -9,14 +9,12 @@ import { ElectronService, PromptData } from '../electron.service';
   imports: [MatButtonModule, MatProgressBarModule, MatListModule],
   styles: [`
     :host { display: block; padding: 20px; height: 100vh; box-sizing: border-box; }
-    .url { word-break: break-all; font-size: 13px; opacity: .75; margin: 8px 0 16px; max-height: 3.6em; overflow: hidden; }
     .actions { display: flex; gap: 8px; margin-top: 16px; }
   `],
   template: `
     @if (data(); as d) {
       @if (!paused()) {
         <h2>Opening in {{ defaultName() }} in {{ remaining() }}s</h2>
-        <div class="url">{{ d.url }}</div>
         <mat-progress-bar mode="determinate" [value]="progress()" />
         <p>Hold <b>Shift</b> to choose another browser.</p>
         <div class="actions">
@@ -25,7 +23,6 @@ import { ElectronService, PromptData } from '../electron.service';
         </div>
       } @else {
         <h2>Open with…</h2>
-        <div class="url">{{ d.url }}</div>
         <mat-action-list>
           @for (b of d.browsers; track b.id) {
             <button mat-list-item (click)="open(b.id)">{{ b.name }}</button>
