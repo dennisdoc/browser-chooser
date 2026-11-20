@@ -1,6 +1,6 @@
-# URL Router
+# Browser Chooser
 
-URL Router is a Windows desktop app built with Electron, Angular, and Angular
+Browser Chooser is a Windows desktop app built with Electron, Angular, and Angular
 Material. It routes HTTP and HTTPS links to browsers based on their domains.
 
 ## Features
@@ -38,7 +38,7 @@ npm run dist
 ```
 
 The NSIS installer is generated in `dist/`. After installing, use **Set as
-default browser** in the app and select URL Router in Windows Default apps.
+default browser** in the app and select Browser Chooser in Windows Default apps.
 
 ## Configure routing
 
@@ -49,4 +49,4 @@ default browser** in the app and select URL Router in Windows Default apps.
 4. Save the settings.
 
 Settings are stored as `settings.json` under Electron's `userData` directory
-(typically `%APPDATA%\url-router\settings.json` on Windows).
+(typically `%APPDATA%\Browser Chooser\settings.json` on Windows).

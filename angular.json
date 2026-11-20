@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "url-router": {
+    "browser-chooser": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -70,10 +70,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "url-router:build:production"
+              "buildTarget": "browser-chooser:build:production"
             },
             "development": {
-              "buildTarget": "url-router:build:development"
+              "buildTarget": "browser-chooser:build:development"
             }
           },
           "defaultConfiguration": "development"

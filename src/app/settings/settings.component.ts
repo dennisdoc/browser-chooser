@@ -23,7 +23,7 @@ import { Config, ElectronService } from '../electron.service';
   `],
   template: `
     <mat-toolbar color="primary">
-      <span>URL Router</span>
+      <span>Browser Chooser</span>
       <span style="flex:1"></span>
       <button mat-button (click)="setDefault()">Set as default browser</button>
       <button mat-flat-button (click)="save()">Save</button>

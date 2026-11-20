@@ -57,13 +57,13 @@ function quitIfIdle() {
 // ---------- windows ----------
 function load(win, route) {
   if (DEV) win.loadURL('http://localhost:4200/#/' + route);
-  else win.loadFile(path.join(__dirname, '../dist/url-router/browser/index.csr.html'), { hash: '/' + route });
+  else win.loadFile(path.join(__dirname, '../dist/browser-chooser/browser/index.csr.html'), { hash: '/' + route });
 }
 const webPrefs = { preload: path.join(__dirname, 'preload.js'), contextIsolation: true, nodeIntegration: false };
 
 function openSettings() {
   if (settingsWin) { settingsWin.show(); settingsWin.focus(); return; }
-  settingsWin = new BrowserWindow({ width: 920, height: 720, title: 'URL Router', autoHideMenuBar: true, webPreferences: webPrefs });
+  settingsWin = new BrowserWindow({ width: 920, height: 720, title: 'Browser Chooser', autoHideMenuBar: true, webPreferences: webPrefs });
   load(settingsWin, 'settings');
   settingsWin.on('closed', () => { settingsWin = null; quitIfIdle(); });
 }
