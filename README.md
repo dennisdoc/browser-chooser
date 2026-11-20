@@ -11,6 +11,17 @@ Material. It routes HTTP and HTTPS links to browsers based on their domains.
 - Pause the default-browser countdown by holding Shift to choose a browser.
 - Save settings as JSON in Electron's user data folder.
 
+## UI
+
+- Still needs a lot of work but for now pretty basic angular material
+
+<img width="869" height="601" alt="image" src="https://github.com/user-attachments/assets/26c9c7e0-0a9a-48c2-aba8-40b31978f691" />
+<img width="881" height="185" alt="image" src="https://github.com/user-attachments/assets/3baa3fd4-c192-4289-94ea-700eee2eaf60" />
+<img width="466" height="360" alt="image" src="https://github.com/user-attachments/assets/d1d29a3e-c717-4db2-9f29-00d2d558a46e" />
+
+
+
+
 ## Development
 
 Install Node.js and npm, then install the project dependencies:
