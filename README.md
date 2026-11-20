@@ -1,6 +1,6 @@
-# URL Router
+# Browser Chooser
 
-URL Router is a Windows desktop app built with Electron, Angular, and Angular
+Browser Chooser is a Windows desktop app built with Electron, Angular, and Angular
 Material. It routes HTTP and HTTPS links to browsers based on their domains.
 
 ## Features
